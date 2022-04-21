@@ -26,7 +26,6 @@ public class EmployeeDetails {
     public void setEmployeeDoj(String employeeDoj) {
         this.employeeDoj = employeeDoj;
     }
-
     @Override
     public String toString() {
         return "EmployeeDetails{" +
