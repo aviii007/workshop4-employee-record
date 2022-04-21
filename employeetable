@@ -1,0 +1,94 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| addressbookservice |
+| employeepayroll    |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.05 sec)
+mysql> create database employee;
+Query OK, 1 row affected (0.32 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| addressbookservice |
+| employee           |
+| employeepayroll    |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.05 sec)
+
+mysql> use employee;
+Database changed
+-------------------------------------------------------------------------------------------------------
+//UC2 Creating table as AddressBook with attributes
+
+mysql> create table employeetable(
+    -> firstname varchar(50) not null,
+    -> lastname varchar(50) not null,
+    -> empid int not null,
+    -> doj date not null);
+   
+Query OK, 0 rows affected (2.29 sec)
+
+mysql> desc employeetable;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstname   | varchar(50)  | NO   |     | NULL    |       |
+| lastname    | varchar(50)  | NO   |     | NULL    |       |
+| empid       | int          | NO   |     | NULL    |       |
+| doj         | date         | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.13 sec)
+--------------------------------------------------------------------------------------------------------
+//UC3 inserting new Contacts to AddressBook table
+
+mysql> insert into employeetable(firstname,lastname,empid,doj) values('ashvini','kanojia',1,'2022-01-01');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into employeetable(firstname,lastname,empid,doj) values('tarun','khatri',2,'2022-02-01');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into employeetable(firstname,lastname,empid,doj) values('vivek','mehta',3,'2022-03-01');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into employeetable(firstname,lastname,empid,doj) values('nihal','baghel',4,'2022-04-01');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into employeetable(firstname,lastname,empid,doj) values('rishabh','mudliar',5,'2022-05-01');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> select * from Addressbook;
++-----------+------------+----------+-----------+
+| firstname | lastname   | empid    | doj        |
++-----------+------------+----------+-----------+
+| ashvini   | kanojia    |  1       | 2022-01-01 |
+| tarun     | khatri     |  2       | 2022-02-01 |
+| vivek     | mehta      |  3       | 2022-03-01 |
+| someshwar | baghel     |  4       | 2022-04-01 |
+| rishabh   | mudliar    |  5       | 2022-05-01 |
++-----------+------------+----------+-----------+
+
+mysql> delete from Addressbook where firstname='vivek';
+Query OK, 1 row affected (0.15 sec)
+
+mysql> select * from Addressbook;
++-----------+------------+----------+-----------+
+| firstname | lastname   | empid    | doj        |
++-----------+------------+----------+-----------+
+| ashvini   | kanojia    |  1       | 2022-01-01 |
+| tarun     | khatri     |  2       | 2022-02-01 |
+| someshwar | baghel     |  4       | 2022-04-01 |
+| rishabh   | mudliar    |  5       | 2022-05-01 |
++-----------+------------+----------+-----------+
+4 rows in set (0.02 sec)
