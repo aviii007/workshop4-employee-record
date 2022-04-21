@@ -68,7 +68,7 @@ Query OK, 1 row affected (0.08 sec)
 mysql> insert into employeetable(firstname,lastname,empid,doj) values('rishabh','mudliar',5,'2022-05-01');
 Query OK, 1 row affected (0.11 sec)
 
-mysql> select * from Addressbook;
+mysql> select * from employeetable;
 +-----------+------------+----------+-----------+
 | firstname | lastname   | empid    | doj        |
 +-----------+------------+----------+-----------+
