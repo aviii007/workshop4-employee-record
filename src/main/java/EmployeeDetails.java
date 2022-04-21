@@ -22,7 +22,6 @@ public class EmployeeDetails {
     public String getEmployeeDoj() {
         return employeeDoj;
     }
-
     public void setEmployeeDoj(String employeeDoj) {
         this.employeeDoj = employeeDoj;
     }
